@@ -21,16 +21,17 @@ class Soldier {
       constructor(name, health, strength){
         super(health, strength);
         
-        this.name;
+        this.name = name;
       }
     
     attack(){
       return this.strength;
     }
     receiveDamage(amount1){
-              let update = this.health -= amount1;
-          if (update > 0) {
-              return `${this.name} has received ${damage} points of damage`;
+              //let update = this.health -= amount1;
+        super.receiveDamage(amount1)
+          if (this.health > 0) {
+              return `${this.name} has received ${amount1} points of damage`;
           }
           else {
               return `${this.name} has died in act of combat`;
@@ -46,17 +47,19 @@ class Saxon extends Soldier {
       super(health, strength);
     }
   attack(){
-    return '${this.strength} of ${this.saxon}'
+    return '${this.strength} of ${this.saxon1}'
   }
   receiveDamage(amount2){
-    let update = this.health -= amount2;
-if (update > 0) {
-    return `A ${Saxon} has received ${damage} points of damage`;
+    super.receiveDamage(amount2)
+          if (this.health > 0) {
+    return `A ${this.saxon1} has received ${amount2} points of damage`;
 }
 else {
-    return `${Saxon} has died in act of combat`;
+    return `${this.saxon1} has died in act of combat`;
 }
 }
 }
+
+
 // War
 class War {}
