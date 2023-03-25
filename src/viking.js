@@ -47,15 +47,15 @@ class Saxon extends Soldier {
       super(health, strength);
     }
   attack(){
-    return '${this.strength} of ${this.saxon1}'
+    return this.strength;
   }
   receiveDamage(amount2){
     super.receiveDamage(amount2)
           if (this.health > 0) {
-    return `A ${this.saxon1} has received ${amount2} points of damage`;
+    return `A Saxon has received ${amount2} points of damage`;
 }
 else {
-    return `${this.saxon1} has died in act of combat`;
+    return `A Saxon has died in combat`;
 }
 }
 }
